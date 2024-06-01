@@ -9,52 +9,28 @@
 }
 
 body {
-    background: #080808;
+    background: rgb(25, 22, 22);
     color: white;
     display: flex;
     flex-direction: column;
-    height: 100vh;
     margin: 0;
-    padding: 0;
-}
-
-/* Style for the container div to occupy 10% of the viewport height */
-
-
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    padding: 0;/* Ensure body grows with content */
 }
 
 .header {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
-    height: 90vh; /* 90% of the viewport height */
-    text-align: center; /* Center text */
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    text-align: center;
 }
 
-
-nav ul li {
-    display: inline-block;
-    list-style: none;
-    margin: 10px 20px;
-}
-
-nav ul li a {   
-    color:antiquewhite;
-    font-size: 18px;
-    text-decoration: none;
-}
-
-.main-image{
+.main-image {
     transition: opacity 0.3s ease;
 }
 
-.main-image:hover{
+.main-image:hover {
     content: url("images/memoji-alt.png");
 }
 
@@ -68,6 +44,7 @@ nav ul li a {
     -webkit-text-stroke: 1px white;
     font-weight: 999;
 }
+
 .name {
     font-size: 56px;
     font-family: 'Rubik', serif;
@@ -83,14 +60,14 @@ nav ul li a {
     color: azure;
     text-decoration: none;
     font-weight: 700px;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 
 .jobs {
     font-size: 48px;
     font-family: 'Rubik';
     color: lightcoral;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
     position: relative;
     font-weight: 700px;
     transition: transform 0.5s ease-in-out;
@@ -98,25 +75,34 @@ nav ul li a {
 
 #top-div {
     padding: 10px;
-    display: flex; /* Use flexbox */
-    flex-wrap: nowrap; /* Prevent wrapping to new lines */
-    background-color: black;
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: rgb(25, 22, 22);
+    position: relative;
+    min-height: 10vh; /* Ensure top-div grows with content */
 }
 
 .sub-div {
-    width: calc(25% - 20px); /* Adjusted to accommodate margins */
+    width: calc(25% - 20px);
     box-sizing: border-box;
-    border: 1px solid gray;
     margin-left: 10px;
-    margin-right: 10px; /* corrected typo in margin property */
-    background-color: #010101; /* changed background color to gray */
-    border-radius: 10px; /* added border-radius for rounded corners */
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    min-height: fit-content; 
-    padding: 5px; 
-    
+    margin-right: 10px;
+    background-color: rgb(25, 22, 22);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: fit-content;
+    padding: 5px;
+    transition: height 0.5s ease, width 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.sub-div:hover {
+    background-color: #3a3333;
 }
 
 .sub-div-content {
@@ -126,9 +112,61 @@ nav ul li a {
     font-weight: bold;
 }
 
-/* Clearfix to prevent float collapsing */
+.card-content {
+    display: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    font-family: 'Rubik';
+    text-align: justify;
+}
+
+.sub-div.expanded {
+    width: 100%;
+    height: auto;
+    z-index: 10;
+    transition: height 0.5s ease, width 0.3s ease;;
+}
+
+.sub-div.expanded .sub-div-content {
+    display: none;
+}
+
+.sub-div.expanded .card-content {
+    display: block;
+}
+
 .clearfix:after {
     content: "";
     display: table;
     clear: both;
+}
+
+.footer {
+    width: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 10vh;
+    position: relative;
+    bottom: 0;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    color: white;
+}
+
+.list {
+    padding-left: 40px;
+}
+
+ol li {
+    font-family: 'Rubik';
+}
+
+.hyperlink {
+    color: white;
+
 }
