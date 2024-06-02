@@ -13,6 +13,7 @@ const phrases = [
 
 const hellos = [
     'Hi!',
+    'Jambo!',
     '你好!',
     'नमस्ते!',
     'Hola!',
@@ -20,8 +21,7 @@ const hellos = [
     'مرحبا!',
     'হ্যালো!',
     'Здравствуйте!',
-    'Olá!',
-    'سلام!'        
+    'Olá!',        
 ];
 
 let pIndex = 0;
