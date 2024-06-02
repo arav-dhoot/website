@@ -34,6 +34,18 @@ body {
     content: url("images/memoji-alt.png");
 }
 
+.hello {
+    font-size: 56px;
+    font-family: 'Rubik';
+    color: azure;
+    text-decoration: none;
+    font-weight: normal;
+    margin-bottom: 20px;
+    -webkit-text-stroke: 1px white;
+    font-weight: 999;
+    transition: transform 0.5s fade;
+}
+
 .intro {
     font-size: 56px;
     font-family: 'Rubik';

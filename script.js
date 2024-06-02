@@ -1,21 +1,40 @@
 const dynamicText = document.querySelector('.jobs');
+const helloText = document.querySelector('.hello');
+
 const phrases = [
     'an inventor \uD83D\uDEE0',
     'a coder \uD83D\uDCBB',
     'a freshman @ Columbia 🦁',
     'a coffee lover \u2615',
     'an occasional procrastinator \uD83E\uDEE0',
-    'an aviation geek ✈️'
+    'a computer science enthusiast 👨‍💻',
+    'an aviation geek ✈️',
+];
+
+const hellos = [
+    'Hi!',
+    '你好!',
+    'नमस्ते!',
+    'Hola!',
+    'Bonjour!',
+    'مرحبا!',
+    'হ্যালো!',
+    'Здравствуйте!',
+    'Olá!',
+    'سلام!'        
 ];
 
 let pIndex = 0;
+let hIndex = 0;
 
-const updateText = () => {
+const updatePhrases = () => {
     dynamicText.textContent = phrases[pIndex];
     dynamicText.style.transform = 'translateY(100%)';
+    
     setTimeout(() => {
         dynamicText.style.transition = 'none';
         dynamicText.style.transform = 'translateY(-100%)';
+        
         setTimeout(() => {
             dynamicText.style.transition = 'transform 0.5s ease-in-out';
             dynamicText.style.transform = 'translateY(0)';
@@ -24,15 +43,40 @@ const updateText = () => {
     }, 500);
 };
 
+const updateHellos = () => {
+    helloText.textContent = hellos[hIndex];
+    helloText.style.transform = 'translateY(100%)';
+    
+    setTimeout(() => {
+        helloText.style.transition = 'none';
+        helloText.style.transform = 'translateY(-100%)';
+        
+        setTimeout(() => {
+            helloText.style.transition = 'transform 0.5s ease-in-out';
+            helloText.style.transform = 'translateY(0)';
+            hIndex = (hIndex + 1) % hellos.length;
+        }, 50);
+    }, 500);
+};
+
+// Initial content setup
 dynamicText.textContent = phrases[pIndex];
+helloText.textContent = hellos[hIndex];
+
+// Initial animation setup
 setTimeout(() => {
     dynamicText.style.transform = 'translateY(0)';
     pIndex = (pIndex + 1) % phrases.length;
 }, 50);
 
+setTimeout(() => {
+    helloText.style.transform = 'translateY(0)';
+    hIndex = (hIndex + 1) % hellos.length;
+}, 50);
 
-setInterval(updateText, 2000);
-
+// Set intervals for updating text
+setInterval(updatePhrases, 2000);
+setInterval(updateHellos, 14000);
 
 document.addEventListener('DOMContentLoaded', function () {
     var subDivs = document.querySelectorAll('.sub-div');
