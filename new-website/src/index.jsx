@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './tailwind.css'
-import App from './App'
+import PersonalWebsite from './components/PersonalWebsite/PersonalWebsite'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <App />
+    <PersonalWebsite />
   </React.StrictMode>
 )
